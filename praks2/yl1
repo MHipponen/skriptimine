@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# Skript väljastab kasutajale "Tere"
+
+echo "Tere $USER"
+echo "!"
