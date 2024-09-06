@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# Skript väljastab kasutajale kuupäeva ja ajaga seotud andmed
+
+
+DATE=$(date +"%A, %B %d, %Y")
+TIME=$(date +"%R")
+CALENDAR=$(date +"%B %Y")
+echo
+echo "Today is $DATE"
+echo "Time is $TIME" 
+echo
+echo "Calendar of $CALENDAR"
+cal | tail -n 7
