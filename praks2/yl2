@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# Skript väljastab kasutajanime kasutades keskkonnamuutujat
+
+echo "Tere, $USER"
+echo "!"
