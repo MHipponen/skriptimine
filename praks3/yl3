@@ -7,5 +7,8 @@ ainepunktid_tundideks=$(("$ainepunktide_arv*26" | bc))
 echo "Sisesta nädalate arv"
 read nadalate_arv
 
-aeg=$(echo "scale=1;$ainepunktid_tundideks/$nadalate_arv" | bc)
-echo $aeg
+aeg=`echo "scale=1;$ainepunktid_tundideks/$nadalate_arv" | bc`
+
+
+aeg_ymarda="`echo "($aeg+0.9)/1" | bc`"
+echo $aeg_ymarda
