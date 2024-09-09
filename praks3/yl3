@@ -1,0 +1,11 @@
+#! /bin/bash
+
+echo "Sisesta ainepunktide arv"
+read ainepunktide_arv
+ainepunktid_tundideks=$(("$ainepunktide_arv*26" | bc))
+
+echo "Sisesta nädalate arv"
+read nadalate_arv
+
+aeg=$(echo "scale=1;$ainepunktid_tundideks/$nadalate_arv" | bc)
+echo $aeg
