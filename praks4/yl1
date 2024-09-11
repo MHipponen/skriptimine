@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# otsusta milline on paaris-, milline paaritu arv
+
+echo "Sisesta suvaline arv"
+read suvaline_arv
+
+if (($suvaline_arv % 2 == 0)) ;then
+	echo "Tegemist on paarisarvuga"
+else
+	echo "Tegemist on paaritu arvuga"
+fi
