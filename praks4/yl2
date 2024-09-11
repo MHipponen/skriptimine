@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# skript mis kontrollib, kas leidub reisjasse, kes ei mahu bussi
+# ning vastasel juhul lisab ühe bussi juurde
+
+echo "Sisesta reisjate arv: "
+read reisjate_arv
+
+echo "Sisesta mitu inimest mahub ühte bussi: "
+read bussi_mahutavus
+
+busside_arv=$(($reisjate_arv/$bussi_mahutavus))
+maha_jaanud=$((reisjate_arv % bussi_mahutavus))
+
+# if statement mis kontrollib kas mahajäänud reisjaid on, kui on
+# siis lisab bussi juurde
+
+if ((maha_jaanud>0)); then
+busside_arv=$[busside_arv+1]
+fi
+
+echo "Kokku on vaja $busside_arv bussi."
