@@ -1,0 +1,25 @@
+#! /bin/bash
+
+# aja jargi tervitamine
+
+# kysi kasutajalt kellaaeg
+echo "Sisesta kellaeg: "
+read tund
+
+# Kontrolli, kas sisestatud väärtus on täisarv ja jääb vahemikku 0-23
+if ! [[ "$tund" =~ ^[0-9]+$ ]] || [ "$tund" -lt 0 ] || [ "$tund" -gt 23 ]; then
+    echo "Viga: Sisesta korrektne kellaaeg 0-23."
+    exit 1
+fi
+
+# Tervita vastavalt sisestatud kellaajale
+
+if [ "$tund" -ge 6 ] && [ "$tund" -lt 12 ]; then
+    echo "Tere hommikust!"
+elif [ "$tund" -ge 12 ] && [ "$tund" -lt 18 ]; then
+    echo "Tere päevast!"
+elif [ "$tund" -ge 18 ] && [ "$tund" -lt 22 ]; then
+    echo "Tere õhtust!"
+else
+    echo "Head ööd!"
+fi
