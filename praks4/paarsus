@@ -1,0 +1,24 @@
+#! /bin/bash
+
+# kontrolli, kas argument on olemas
+
+if [ "$#" -ne 1 ]; then
+	echo "Käivita see skript koos arvuga, mille paarsust soovid kontrollida. Näiteks: ./paarsus 3"
+	exit 1
+fi
+
+# kontrolli, kas argument on taisarv
+
+
+if ! [[ "$1" =~ ^-?[0-9]+$ ]]; then
+	echo "Kasuta antud skripti ainult täisarvuga"
+	exit 1
+fi
+
+# arvuta, kas tegemist on paaris- voi paarituarvuga
+
+if [ $(($1 % 2)) -eq 0 ]; then
+	echo "Arv $1 on paaris"
+else
+	echo "Arv $1 on paaritu"
+fi
