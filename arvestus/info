@@ -1,7 +1,11 @@
 #! /bin/bash
 
 # Markkus Hipponen - info - skript tervitab kasutajat ja väljastab kellaaja
+
 kuupaev=$(date +"%d.%m.%Y")
 aeg=$(date +"%H:%M")
+
+# skript tervitab kasutajat
 echo "Tere $USER"
+# skript valjastab praeguse kuupaeva ja kellaaja
 echo "Täna on $kuupaev kell $aeg"
