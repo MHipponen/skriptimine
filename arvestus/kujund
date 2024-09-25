@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# Markkus Hipponen - kujund - valjastab kasutajale kujundid olenevalt
+# soovitud ridade arvust
+
+# kysi kasutajalt mitu rida ta soovib
+echo "Sisesta ridade arv: "
+read ridade_arv
+
+# for loopid t2htede valjastamiseks
+for ((i = ridade_arv; i > 0; i--)); do
+	for ((j = 1; j <= i; j++)); do
+		echo -n "* "
+	done	
+	echo ""
+done
