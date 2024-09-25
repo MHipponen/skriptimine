@@ -1,0 +1,26 @@
+#! /bin/bash
+
+# Markkus Hipponen - menu - skript väljastab kasutajale valikud ning
+# vastavalt valikule väljastab kastuajale vastuse
+
+echo "1) liha ja kartulid"
+echo "2) kala ja krõpsud"
+echo "3) supp ja salat"
+
+# kysi kasutajalt tema valik
+
+echo "Tee oma valik (1 või 2 või 3)"
+read vastus
+
+# if statement block kastuajale vastuse andmiseks
+
+if [ $vastus -eq 1 ]; then
+	echo "Väga maitsev, aga jälgi oma tervist!"
+	echo "Head isu!"
+elif [ $vastus -eq 2 ]; then
+	echo "Brititoit on maitsev!"
+	echo "Head isu!"
+elif [ $vastus -eq 3 ]; then
+	echo "Nii tervislik ja igav..."
+	echo "Head isu!"
+fi
