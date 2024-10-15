@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# skript kysib kasutajalt ridade arvu ning vastavalt sellele 
+# valjastab soovitud kujundi o-dest ja tarnidest, o kogus yhes reas 
+# on rea pikkus ehk ridade_arv  - rea number
+
+read -p "Sisesta ridade arv: " ridade_arv
+
+for (( i=1; i<=ridade_arv; i++ ))
+do
+echo -n "$i. "
+	for (( j=1; j<=ridade_arv-i; j++ ))
+	do
+		echo -n "o "	
+	done
+
+	for (( k=1; k<=i; k++ ))
+	do
+		echo -n "* "
+	done
+	echo ""
+done
