@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# skript kysib kasutajalt ridade arvu ning vastavalt sellele 
+# valjastab soovitud read ning igal read sama palju tarne kui on rea number
+
+read -p "Sisesta ridade arv: " ridade_arv
+
+for (( i=1; i<=ridade_arv; i++))
+do
+echo -n "$i. "
+	for (( j=1; j<=i; j++))
+	do
+		echo -n "* "	
+	done
+	echo ""
+done
