@@ -1,0 +1,17 @@
+#! /bin/bash
+
+# skripti eesmark on ykshaaval liita kokku koik numbrid kasutaja
+# antud taisarvus - nt 15 ehk 1+5 = 6
+
+
+echo "Sisesta suvaline täisarv:"
+read arv
+
+while [ $arv -ne 0 ]
+do
+    jaak=$(($arv % 10))
+    summa=$(($summa + $jaak))
+    arv=$(($arv / 10))
+done
+
+echo "$summa"
