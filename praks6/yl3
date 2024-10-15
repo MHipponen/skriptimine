@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# skript kysib kasutajalt numbrit 1-12 ning vastavalt numbrile
+# valjastab kasutajale numbrile vastava kuu, nt 6 - Juuni
+
+read -p "Sisesta kuu number 1-12: " kuu
+
+
+case $kuu in
+	1) echo "Jaanuar";;
+	2) echo "Veebruar";;
+	3) echo "Märts";;
+	4) echo "Aprill";;
+	5) echo "Mai";;
+	6) echo "Juuni";;
+	7) echo "Juuli";;
+	8) echo "August";;
+	9) echo "September";;
+	10) echo "Oktoober";;
+	11) echo "November";;
+	12) echo "Detsember";;
+	*) echo "Viga: Sisesta kuu number vahemikus 1 kuni 12.";;
+esac
