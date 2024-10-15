@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Sisesta ridade arv: " ridade_arv
+read -p "Sisesta tarnide arv: " tarnide_arv
+
+for (( i=1; i<=ridade_arv; i++))
+do
+echo -n "$i. "
+	for (( j=1; j<=tarnide_arv; j++))
+	do
+		echo -n "* "
+	done
+	echo ""
+done
