@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# skript kysib kasutajalt ridade- ja tarnide arvu, valjastab soovitud arv ridu ja 
+# soovitud arv tarne
+
+read -p "Sisesta ridade arv: " ridade_arv
+read -p "Sisesta tarnide arv: " tarnide_arv
+
+for (( i=1; i<=ridade_arv; i++))
+do
+	echo -n "$i. "
+	for (( j=1; j<=tarnide_arv; j++))
+	do
+		if [[ $j -eq 1 || $j -eq tarnide_arv || $i -eq 1 || $i -eq ridade_arv ]]; then
+			echo -n "* "
+		else
+			echo -n "  "
+		fi
+	done
+	echo ""
+done
