@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Eesnimed
+cat inimesed.txt | cut -f2 -d' ' | cut -f1 -d";"  > /home/user/skriptimine/konveier/eesnimed.txt
+
+# Perenimed
+cat inimesed.txt | cut -f1 -d"," | cut -f2 -d":" > /home/user/skriptimine/konveier/perenimed.txt
+
+# Domeenid
+cat inimesed.txt | cut -f2 -d";" > /home/user/skriptimine/konveier/domeenid.txt
+
+# Eesnimede väikseks muutmine
+tr '[:upper:]' '[:lower:]' < /home/user/skriptimine/konveier/eesnimed.txt > /home/user/skriptimine/konveier/eesnimed.txt.tmp && mv /home/user/skriptimine/konveier/eesnimed.txt.tmp /home/user/skriptimine/konveier/eesnimed.txt
+
+# Perenimede väikseks muutmine 
+tr '[:upper:]' '[:lower:]' < /home/user/skriptimine/konveier/perenimed.txt > /home/user/skriptimine/konveier/perenimed.txt.tmp && mv /home/user/skriptimine/konveier/perenimed.txt.tmp /home/user/skriptimine/konveier/perenimed.txt
+
+# Kasutajate loomine (eesnimi + perenimi)
+paste /home/user/skriptimine/konveier/eesnimed.txt /home/user/skriptimine/konveier/perenimed.txt | sed 's/\t/./g' > /home/user/skriptimine/konveier/kasutajad.txt
+
+# Meilide loomine (eesnimi + perenimi + domeen)
+paste /home/user/skriptimine/konveier/eesnimed.txt /home/user/skriptimine/konveier/perenimed.txt /home/user/skriptimine/konveier/domeenid.txt | sed 's/\t/./g; s/$/@&/' > /home/user/skriptimine/konveier/meilid.txt
