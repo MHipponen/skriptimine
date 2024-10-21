@@ -1,0 +1,21 @@
+#!/bin/bash
+# skript küsib kasutajalt soovitud koguse ridu ning moodustab vastavalt
+# sellele kujundi, kus sees on tühi kolmnurk ning äärtes on tärnid
+
+read -p "Sisesta ridade arv: " ridade_arv
+
+for ((i = ridade_arv; i > 0; i--)); do
+  for ((j = 0; j < i; j++)); do
+    echo -n "*"
+  done
+
+  for ((k = 0; k < 2 * (ridade_arv - i); k++)); do
+    echo -n " "
+  done
+
+  for ((j = 0; j < i; j++)); do
+    echo -n "*"
+  done
+
+  echo ""
+done
